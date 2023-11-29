@@ -34,7 +34,7 @@ import {
 } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDU3dOgxnBULoHTnEqJ9Fha1RfhFatJvKg",
+  apiKey: process.env.API_KEY,
   authDomain: "anas-todo.firebaseapp.com",
   projectId: "anas-todo",
   storageBucket: "anas-todo.appspot.com",
