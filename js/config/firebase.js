@@ -32,7 +32,7 @@ import {
   deleteDoc,
   updateDoc,
 } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore.js";
-
+require('dotenv').config()
 const firebaseConfig = {
   apiKey: process.env.API_KEY,
   authDomain: "anas-todo.firebaseapp.com",
