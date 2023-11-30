@@ -30,7 +30,7 @@ onAuthStateChanged(auth, (user) => {
     spinner();
     if (flag) {
       const uid = user.uid;
-      location.href = "./home.html";
+      location.href = "https://todozenapp.netlify.app/home";
       localStorage.setItem("uid", uid);
     }
   }
@@ -155,7 +155,7 @@ const signup = () => {
                             photo: downloadURL,
                           });
                           localStorage.setItem("uid", user.uid);
-                          location.href = "./home.html";
+                          location.href = "https://todozenapp.netlify.app/home";
                           flag = true;
                         }
                         me();
@@ -172,7 +172,7 @@ const signup = () => {
                     photo: null,
                   });
                   localStorage.setItem("uid", user.uid);
-                  location.href = "./home.html";
+                  location.href = "https://todozenapp.netlify.app/home";
                   flag = true;
                 }
                 me();
@@ -240,7 +240,7 @@ const signin = () => {
     .then((userCredential) => {
       const user = userCredential.user;
       localStorage.setItem("uid", user.uid);
-      location.href = "./home.html";
+      location.href = "https://todozenapp.netlify.app/home";
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -278,7 +278,7 @@ const googleWith = () => {
           photo: user.photoURL,
         });
         localStorage.setItem("uid", user.uid);
-        location.href = "./home.html";
+        location.href = "https://todozenapp.netlify.app/home";
         flag = true;
         spinner();
       } catch (error) {
