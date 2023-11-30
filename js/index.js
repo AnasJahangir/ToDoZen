@@ -32,11 +32,11 @@ onAuthStateChanged(auth, (user) => {
       const uid = user.uid;
       location.href = "https://todozenapp.netlify.app/home";
       localStorage.setItem("uid", uid);
-    }else{
+    }
+  }else{
     spinner(false);
       
     }
-  }
 });
 const forms = document.querySelector(".forms"),
   pwShowHide = document.querySelectorAll(".eye-icon"),
