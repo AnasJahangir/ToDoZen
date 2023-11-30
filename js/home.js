@@ -34,7 +34,7 @@ onAuthStateChanged(auth, async (user) => {
   spinner(true);
   if (!user) {
     localStorage.clear();
-    location.href = "./index.html";
+    location.href = "https://todozenapp.netlify.app/";
   } else {
     const docRef = doc(db, "users", user.uid);
     const q = query(collection(docRef, "todos"), orderBy("time"));
@@ -206,7 +206,7 @@ signoutbtn.addEventListener("click", () => {
       signOut(auth)
         .then(() => {
           localStorage.clear();
-          location.href = "./index.html";
+          location.href = "https://todozenapp.netlify.app/";
         })
         .catch((error) => {
           Swal.fire({
