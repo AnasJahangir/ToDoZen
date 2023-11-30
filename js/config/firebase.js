@@ -34,7 +34,7 @@ import {
 } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore.js";
 require('dotenv').config()
 const firebaseConfig = {
-  apiKey: process.env.API_KEY,
+  apiKey: "AIzaSyDU3dOgxnBULoHTnEqJ9Fha1RfhFatJvKg",
   authDomain: "anas-todo.firebaseapp.com",
   projectId: "anas-todo",
   storageBucket: "anas-todo.appspot.com",
@@ -44,7 +44,6 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-console.log(process.env.API_KEY)
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const storage = getStorage(app);
