@@ -14,20 +14,20 @@ import {
   GoogleAuthProvider,
 } from "./config/firebase.js";
 
-const spinner = () => {
+const spinner = (flag) => {
   const spinnerHTLM = document.getElementById("spinner");
-  if (spinnerHTLM.style.display != "none") {
+  if (!flag) {
     spinnerHTLM.style.display = "none";
   } else {
     spinnerHTLM.style.display = "flex";
   }
 };
 
+spinner(true);
 let flag = true;
 onAuthStateChanged(auth, (user) => {
-  spinner();
   if (user) {
-    spinner();
+    spinner(false);
     if (flag) {
       const uid = user.uid;
       location.href = "https://todozenapp.netlify.app/home";
@@ -264,7 +264,7 @@ signinBtn.addEventListener("click", () => {
 
 const googleWith = () => {
   flag = false;
-  spinner();
+  spinner(true);
   const provider = new GoogleAuthProvider();
   signInWithPopup(auth, provider)
     .then(async (result) => {
@@ -280,7 +280,7 @@ const googleWith = () => {
         localStorage.setItem("uid", user.uid);
         location.href = "https://todozenapp.netlify.app/home";
         flag = true;
-        spinner();
+        spinner(false);
       } catch (error) {
         Swal.fire({
           icon: "error",
@@ -290,7 +290,7 @@ const googleWith = () => {
       }
     })
     .catch((error) => {
-      spinner();
+      spinner(false);
       Swal.fire({
         icon: "error",
         title: error,
