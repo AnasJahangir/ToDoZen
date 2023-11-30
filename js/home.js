@@ -96,7 +96,7 @@ const addTodoBtn = document.getElementById("addTodos");
 const addTodo = async () => {
   const taskValue = document.getElementById("new-task");
   const uid = localStorage.getItem("uid");
-  if (taskValue.value) {
+  if (taskValue.value.trim()) {
     const docRef = doc(db, "users", uid);
     const colRef = collection(docRef, "todos");
     addDoc(colRef, {
@@ -122,10 +122,7 @@ const deleteTodo = async (id, btn) => {
 };
 
 const editTodo = async (id, btn) => {
-  // const updateValue = prompt(
-  //   "Enter New Value",
-  //   btn.parentElement.children[1].innerText
-  // );
+
   if (
     btn.parentElement.classList.contains("editMode") &&
     btn.parentElement.children[2].value.trim()
